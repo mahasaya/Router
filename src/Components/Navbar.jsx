@@ -11,33 +11,33 @@ const Navbar = (props) => {
 
 
   return (
-    <div className='flex justify-evenly'>
+    <div className='flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto'>
 
     <Link to ="/">
       <img src={logo} alt='logo' width={160} height={32} loading="lazy"/>
     </Link>
 
     <nav>
-      <ul className='flex gap-3'>
+      <ul className='   text-gray-300 flex gap-x-6'>
          
          <li>
-          <Link to ="Home">Home</Link>
+          <Link to ="/">Home</Link>
          </li>
          <li>
-          <Link to ="About">About</Link>
+          <Link to ="about">About</Link>
          </li>
          <li>
-          <Link to ="Contact">Contact</Link>
+          <Link to ="contact">Contact</Link>
          </li>
       </ul>
     </nav>
 
-    <div className=' flex ml-5 mr-3 gap-3'>
+    <div className='  text-gray-300 flex items-center gap-x-6'>
       
       {
         !isLoggedin &&
         <Link to="/login">
-          <button onClick={() =>{
+          <button className=' bg-gray-800  text-gray-300 py-[8px] px-[12px] rounded-[8px] border border-gray-600' onClick={() =>{
             setLogin(true);
             toast.success("logged in succesfully")
           }}>
@@ -49,7 +49,7 @@ const Navbar = (props) => {
       {
         !isLoggedin &&
         <Link to="/signup">
-          <button onClick={() =>{
+          <button className=' bg-gray-800  text-gray-300 py-[8px] px-[12px] rounded-[8px] border border-gray-600' onClick={() =>{
             setLogin(true);
             toast.success("logged in succesfully")
           }}> 
@@ -61,7 +61,7 @@ const Navbar = (props) => {
       {
         isLoggedin &&
         <Link to="/">
-          <button onClick={() =>{
+          <button className=' bg-gray-800 text-gray-300 py-[8px] px-[12px] rounded-[8px] border border-gray-600' onClick={() =>{
             setLogin(false);
             toast.success("logged out succesfully")
           }}>
@@ -73,7 +73,7 @@ const Navbar = (props) => {
       {
         isLoggedin &&
         <Link to="/dashboard">
-          <button>
+          <button className=' bg-gray-800 text-gray-300 py-[8px] px-[12px] rounded-[8px] border border-gray-600'>
             Dashboard
           </button>
         </Link>
